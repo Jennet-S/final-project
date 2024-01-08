@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from "../components/Navbar";
 import PatientCard from "../components/patient/PatientCard";
+import AddPatientForm from "../components/patient/AddPatientForm";
 
 function Home() {
     const location = useLocation();
@@ -117,7 +118,7 @@ function Home() {
                 <Navbar />
                 <h1>Welcome {userName}</h1>
             </div>
-
+            <AddPatientForm onAddPatient={handleAddPatient} />
             <div className="patient-section">
                 <div className='patient-cards'>
                     {loading ? (

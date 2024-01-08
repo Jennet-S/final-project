@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import DateTime from './DateTime';
+import AddPatientForm from './patient/AddPatientForm';
 
 const pages = ['Add patient', 'Add obs', 'Add notes'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -21,6 +22,8 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [isAddPatientFormVisible, setAddPatientFormVisible] = React.useState(false);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -35,6 +38,15 @@ function Navbar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+    const toggleAddPatientForm = () => {
+    setAddPatientFormVisible(!isAddPatientFormVisible);
+  };
+
+  const handleAddPatientClick = () => {
+    toggleAddPatientForm();
+    handleCloseNavMenu();
   };
 
   return (
@@ -95,6 +107,7 @@ function Navbar() {
                 </MenuItem>
               ))}
             </Menu>
+            
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
 
@@ -141,7 +154,11 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
+          
         </Toolbar>
+        <Box sx={{ flexGrow: 0 }}>
+
+          </Box>
       </Container>
     </AppBar>
   );

@@ -78,7 +78,7 @@ const PatientCard = ({
                 ) : (
                     <div>
 
-                        {/* <p>Rm: {patient.room} | NHI: {patient.nhi}</p> */}
+                        <p>Rm: {patient.room} | NHI: {patient.nhi}</p>
                         <h2>{patient.lastName}, {patient.firstName} {patient.age} yr</h2>
                         <p>Dx: {patient.diagnosis}</p>
                         <p>MHx: {patient.history}</p>
